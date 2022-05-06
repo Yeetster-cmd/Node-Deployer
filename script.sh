@@ -10,6 +10,7 @@ read -p "Please enter RAM Amount for the Node: " mem
 read -p "Pleae enter Disk Size: " disk
 read -p "Please enter the directory to the mounted disk: " mnt_disk
 JSONBody="{\
+    \"domain\": \"${domain}\",\
     \"name\": \"${name}\",\
     \"location_id\": \"$id\",
     \"fqdn\": \"$fqdn\",
@@ -23,7 +24,7 @@ JSONBody="{\
     \"daemon_listen\": 8080,
     \"daemon_base\":  \"$mnt_disk\"
 }"
-curl "https://panel.yeethosting.xyz/api/application/nodes" \
+curl "https://"${domain}"/api/application/nodes" \
         -H 'Accept: application/json' \
         -H 'Content-Type: application/json' \
         -H "Authorization: Bearer $key" \
