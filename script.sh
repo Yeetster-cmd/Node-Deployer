@@ -2,6 +2,7 @@
 read -p $'Press 0 for Node Deployment or Press 1 for Wings Install&Config\nRun Node Deployment then Wings Installation if you are using this to easily boot up servers\n' CHECK
 if [ $CHECK = 0 ]
 then
+read -p "Please enter the domain of the panel: " domain
 read -p "Please enter the name of the Node: " name
 read -p "Please enter an API Key: " key
 read -p "Please enter a location ID: " id
