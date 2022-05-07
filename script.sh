@@ -37,7 +37,7 @@ fi
 if [ $CHECK = 1 ]
 then
 echo "Installing Wings"
-echo "IF THIS GETS STUCK, GO TO LINE 39 AND PUT A # BEFORE CURL"
+echo "IF THIS GETS STUCK, GO TO LINE 41 AND PUT A # BEFORE CURL"
 curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 systemctl enable --now docker
 mkdir -p /etc/pterodactyl
