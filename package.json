@@ -19,4 +19,8 @@
     "url": "https://github.com/CrewCraft-Projects/Node-Deployer/issues"
   },
   "homepage": "https://github.com/CrewCraft-Projects/Node-Deployer#readme"
+  "publishConfig": {
+     "Yeetster-cmd:registry": "https://npm.pkg.github.com"
+ }
 }
+
