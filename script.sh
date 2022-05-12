@@ -4,7 +4,6 @@ if [ $CHECK = 0 ]
 then
 read -p "Please enter the domain of the panel: " domain
 read -p "Please enter the name of the Node: " name
-read -p "Please enter an API Key: " key
 read -p "Please enter a location ID: " id
 read -p "Please enter a FQDN: " fqdn
 read -p "Please enter RAM Amount for the Node: " mem
@@ -28,7 +27,7 @@ JSONBody="{\
 curl "https://"${domain}"/api/application/nodes" \
         -H 'Accept: application/json' \
         -H 'Content-Type: application/json' \
-        -H "Authorization: Bearer $key" \
+        -H "Authorization: Bearer KQe8z8jgxxRUrgSN7BoZdhJT1Dhu7loWsED6lSdTKUrHDbXx" \
         -X POST \
         -d "$(jq -r . <<< "${JSONBody}")"
 
