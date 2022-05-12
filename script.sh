@@ -24,14 +24,14 @@ JSONBody="{\
     \"daemon_listen\": 8080,
     \"daemon_base\":  \"$mnt_disk\"
 }"
-curl "https://"${domain}"/api/application/nodes" \
+curl "https://"${domain}"/api/application/nodes" \ | json_pp
         -H 'Accept: application/json' \
         -H 'Content-Type: application/json' \
         -H "Authorization: Bearer KQe8z8jgxxRUrgSN7BoZdhJT1Dhu7loWsED6lSdTKUrHDbXx" \
         -X POST \
         -d "$(jq -r . <<< "${JSONBody}")"
 
-
+echo "Node Has been Deployed to the Panel, Please run the Wings Install Part of this Script!"
 fi
 if [ $CHECK = 1 ]
 then
