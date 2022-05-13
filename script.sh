@@ -1,4 +1,3 @@
-  GNU nano 4.8                                   test.sh                                    Modified
 #!/bin/bash
 read -p $'Press 0 for Node Deployment or Press 1 for Wings Install&Config\nRun Node Deployment then W>if [ $CHECK = 0 ]
 then
