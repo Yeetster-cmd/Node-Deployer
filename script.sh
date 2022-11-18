@@ -46,7 +46,7 @@ echo "Node Has been Deployed to the Panel, Please run the Wings Install Part of 
 fi
 if [ $CHECK = 1 ]; then
 apt install curl
-#WIP, will be replaced later on
+
 curl -sSL https://get.docker.com/ | CHANNEL=stable bash
 systemctl enable --now docker
 mkdir -p /etc/pterodactyl
@@ -68,7 +68,7 @@ curl "https://"${p_domain}"/api/application/nodes/"${node_id}"/configuration" \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer $apikey' \
   -X GET  | json_pp >> config.yml
-systemctl enable --now wings
+
 cd  /etc/systemd/system
 echo "[Unit]
 Description=Pterodactyl Wings Daemon
