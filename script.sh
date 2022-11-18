@@ -47,7 +47,9 @@ fi
 if [ $CHECK = 1 ]; then
 apt install curl
 #WIP, will be replaced later on
-bash <(curl -s https://pterodactyl-installer.se)
+curl -sSL https://get.docker.com/ | CHANNEL=stable bash
+systemctl enable --now docker
+
 sleep 180
 cd /etc/pterodactyl
 FILE=/etc/pterodactyl/config.yml
