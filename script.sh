@@ -52,8 +52,6 @@ systemctl enable --now docker
 mkdir -p /etc/pterodactyl
 curl -L -o /usr/local/bin/wings "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
 chmod u+x /usr/local/bin/wings
-
-sleep 180
 cd /etc/pterodactyl
 FILE=/etc/pterodactyl/config.yml
 if [ -f "$FILE" ]; then
@@ -68,7 +66,6 @@ curl "https://"${p_domain}"/api/application/nodes/"${node_id}"/configuration" \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer $apikey' \
   -X GET  | json_pp >> config.yml
-
 cd  /etc/systemd/system
 echo "[Unit]
 Description=Pterodactyl Wings Daemon
