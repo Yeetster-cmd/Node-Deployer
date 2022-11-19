@@ -90,8 +90,8 @@ systemctl enable --now wings
 systemctl restart wings
 echo "Creating SSL Certificate"
 sudo apt install -y python3-certbot-nginx
-read -p "Please insert FQDN/Domain of the current server" DMN
-certbot certonly --nginx -d "{DMN}"
+read -p "Please insert FQDN/Domain of the current server: " DMN
+certbot certonly --nginx -d ${DMN}
 echo "Wings have been installed and configured"
 cd /
 fi
