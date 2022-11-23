@@ -67,7 +67,6 @@ curl "https://"${p_domain}"/api/application/nodes/"${node_id}"/configuration" \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer $apikey' \
   -X GET  | json_pp >> config.yml
-
 cd  /etc/systemd/system
 echo "[Unit]
 Description=Pterodactyl Wings Daemon
@@ -92,8 +91,8 @@ systemctl enable --now wings
 systemctl restart wings
 echo "Creating SSL Certificate"
 sudo apt install -y python3-certbot-nginx
-read -p "Please insert FQDN/Domain of the current server" DMN
-certbot certonly --nginx -d "{DMN}"
+read -p "Please insert FQDN/Domain of the current server: " DMN
+certbot certonly --nginx -d ${DMN}
 echo "Wings have been installed and configured"
 cd /
 fi
